@@ -11,12 +11,12 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const product = products.find(item => item.slug === slug);
-  return product ? { title: product.name, description: product.description } : { title: "Sample Creation" };
+  return product ? { title: product.name, description: product.description } : { title: "Handmade Creation" };
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const product = products.find(item => item.slug === slug);
   if (!product) notFound();
-  return <div className="detail-page"><Link href="/shop" className="back-link"><ArrowLeft aria-hidden="true"/> Back to samples</Link><div className="detail-layout"><div className="detail-image"><Image src={product.image} alt={`${product.name} sample placeholder`} fill priority sizes="(max-width: 800px) 100vw, 55vw" style={{ objectPosition: product.imagePosition }}/></div><div className="detail-copy"><p className="sample-note">Sample · Not live inventory</p><h1>{product.name}</h1>{product.price && <p className="detail-price">Sample price {product.price}</p>}<p className="lead">{product.description}</p><div className="delicate-rule"/><p>{product.details}</p><div className="handmade-note"><Heart aria-hidden="true"/><span><b>Made by hand</b>Natural variations make every piece a little different.</span></div><Link className="button button-primary" href="/custom-orders">Ask about something similar <ArrowRight aria-hidden="true"/></Link></div></div></div>;
+  return <div className="detail-page"><Link href="/shop" className="back-link"><ArrowLeft aria-hidden="true"/> Back to creations</Link><div className="detail-layout"><div className="detail-image"><Image src={product.image} alt={product.name} fill priority sizes="(max-width: 800px) 100vw, 55vw" style={{ objectPosition: product.imagePosition }}/></div><div className="detail-copy"><p className="sample-note">Handmade · Ask about availability</p><h1>{product.name}</h1>{product.price && <p className="detail-price">{product.price}</p>}<p className="lead">{product.description}</p><div className="delicate-rule"/><p>{product.details}</p><div className="handmade-note"><Heart aria-hidden="true"/><span><b>Made by hand</b>Natural variations make every piece a little different.</span></div><Link className="button button-primary" href="/custom-orders">Ask about this piece <ArrowRight aria-hidden="true"/></Link></div></div></div>;
 }

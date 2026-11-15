@@ -1,16 +1,19 @@
 export const images = {
-  hero: "/images/workshop-hero.webp",
-  wreath: "/images/botanical-wreath.webp",
-  ceramics: "/images/ceramic-treasures.webp",
-  makers: "/images/makers-hands.webp",
+  hero: "/product-images/floral-bow-keychain.webp",
+  wristlets: "/product-images/wristlet-collection.webp",
+  floralWristlets: "/product-images/floral-wristlets.webp",
+  ornaments: "/product-images/christmas-goose-ornament.webp",
+  bows: "/product-images/gingerbread-door-bow.webp",
+  makers: "/product-images/maker-wristlets.webp",
+  brandBanner: "/product-images/brand-banner.webp",
 } as const;
 
 export const categories = [
-  { name: "Home Decor", slug: "home-decor", image: images.wreath },
-  { name: "Handmade Gifts", slug: "handmade-gifts", image: images.ceramics },
-  { name: "Seasonal Favorites", slug: "seasonal", image: images.makers },
-  { name: "Little Treasures", slug: "little-treasures", image: images.ceramics },
-  { name: "Custom Creations", slug: "custom", image: images.wreath },
+  { name: "Door Bows", slug: "home-decor", image: images.bows },
+  { name: "Key Fobs", slug: "handmade-gifts", image: images.floralWristlets },
+  { name: "Holiday Ornaments", slug: "seasonal", image: images.ornaments },
+  { name: "Little Treasures", slug: "little-treasures", image: images.hero },
+  { name: "Custom Creations", slug: "custom", image: images.makers },
 ] as const;
 
 export type Product = {
@@ -26,14 +29,14 @@ export type Product = {
 };
 
 export const products: Product[] = [
-  { slug: "meadowlight-wreath", name: "Meadowlight Wreath", category: "home-decor", price: "$48", description: "Dried blooms and quiet sage tones for a welcoming doorway.", details: "A sample of the botanical, gathered style we love. Final materials and sizing will vary with each handmade piece.", image: images.wreath, sample: true },
-  { slug: "pressed-botanical-dish", name: "Pressed Botanical Dish", category: "little-treasures", price: "$18", description: "A softly shaped catchall with a hand-pressed floral detail.", details: "A sample concept for rings, keys, or tiny keepsakes. Each handmade dish would have its own organic shape and botanical impression.", image: images.ceramics, sample: true },
-  { slug: "hearthside-bud-vase", name: "Hearthside Bud Vase", category: "handmade-gifts", price: "$24", description: "A petite, earthy vessel made for one thoughtful stem.", details: "A sample gift idea with warm, speckled texture and an intentionally imperfect silhouette.", image: images.ceramics, imagePosition: "70% center", sample: true },
-  { slug: "gathered-bloom-wreath", name: "Gathered Bloom Wreath", category: "seasonal", price: "$54", description: "A seasonal circle of everlasting flowers and field greens.", details: "A sample seasonal direction. Palette and botanicals can shift throughout the year or inspire a custom request.", image: images.wreath, imagePosition: "35% center", sample: true },
-  { slug: "little-leaf-dish", name: "Little Leaf Dish", category: "handmade-gifts", price: "$16", description: "A small sage dish with a tender, scalloped edge.", details: "A sample hostess or just-because gift. Because pieces are handmade, each one would be naturally unique.", image: images.ceramics, imagePosition: "20% center", sample: true },
-  { slug: "memory-star-ornament", name: "Memory Star Ornament", category: "seasonal", price: "$22", description: "Soft linen, careful stitching, and ribbon for generations of holidays.", details: "A sample ornament that could be personalized through a future custom order. No personalization is currently sold online.", image: images.makers, sample: true },
-  { slug: "garden-table-set", name: "Garden Table Set", category: "home-decor", description: "A coordinated group of organic ceramics for the coziest corners.", details: "A sample styling set showing how several small handmade pieces could live together. Pricing would depend on the final selection.", image: images.ceramics, sample: true },
-  { slug: "made-for-you-keepsake", name: "Made-for-You Keepsake", category: "custom", description: "A personal piece shaped around a story, season, or celebration.", details: "A sample custom-order concept. Share your idea and we will use email to discuss feasibility, timing, and a quote.", image: images.makers, imagePosition: "center 45%", sample: true },
+  { slug: "floral-wristlet-key-fob", name: "Floral Wristlet Key Fob", category: "handmade-gifts", description: "A soft fabric wristlet that keeps keys close and hands free.", details: "Shown in a mix of floral and patterned cottons with sturdy metal hardware. Fabric placement varies naturally from piece to piece.", image: "/product-images/floral-wristlets.webp", sample: true },
+  { slug: "blue-floral-bow-keychain", name: "Blue Floral Bow Keychain", category: "little-treasures", description: "A wristlet and bow pairing in a delicate blue floral print.", details: "A cheerful matching set finished with silver-tone hardware. Ask about current fabric choices and coordinating combinations.", image: "/product-images/floral-bow-keychain.webp", imagePosition: "center 48%", sample: true },
+  { slug: "pixel-hero-ornament", name: "Pixel Hero Ornament", category: "seasonal", description: "A playful hand-stitched character ornament for the tree.", details: "Cross-stitched, backed, and finished by hand. Character designs and colors may vary with each seasonal collection.", image: "/product-images/pixel-hero-ornament.webp", sample: true },
+  { slug: "merry-bright-ornament", name: "Merry & Bright Ornament", category: "seasonal", description: "A colorful stitched greeting made for cheerful holiday branches.", details: "Hand-stitched on shaped fabric and finished with a hanging loop. Each piece carries the small variations of handmade work.", image: "/product-images/merry-bright-ornament.webp", sample: true },
+  { slug: "dear-santa-ornament", name: "Dear Santa Ornament", category: "seasonal", description: "A nostalgic stitched note with a wonderfully cheeky message.", details: "A handmade cross-stitch ornament with character, texture, and a classic Christmas palette.", image: "/product-images/dear-santa-ornament.webp", sample: true },
+  { slug: "christmas-goose-ornament", name: "Christmas Goose Ornament", category: "seasonal", description: "A festive little goose delivering a present beside the tree.", details: "Cross-stitched and assembled by hand for a playful, storybook addition to holiday decor.", image: "/product-images/christmas-goose-ornament.webp", sample: true },
+  { slug: "gingerbread-door-bow", name: "Gingerbread Door Bow", category: "home-decor", description: "An oversized fabric bow sprinkled with tiny gingerbread friends.", details: "Designed to bring a soft handmade welcome to a front door. Final size, attachment, and fabric availability are confirmed by email.", image: "/product-images/gingerbread-door-bow.webp", sample: true },
+  { slug: "buffalo-plaid-door-bow", name: "Buffalo Plaid Door Bow", category: "custom", description: "A generous black-and-white bow with cozy farmhouse character.", details: "A statement-size handmade door bow that can inspire a custom color or seasonal fabric request.", image: "/product-images/buffalo-plaid-door-bow.webp", sample: true },
 ];
 
-export const contactEmail = "hello@example.com"; // Replace before launch.
+export const contactEmail = "generationalgemsin@gmail.com";

@@ -3,6 +3,10 @@ node_modules/
 out/
 .npm-cache/
 
+# Local source-resolution uploads; optimized web derivatives are versioned.
+public/real_images/
+public/branding_images/
+
 .env
 .env.*
 !.env.example

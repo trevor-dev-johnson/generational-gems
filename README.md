@@ -54,38 +54,36 @@ No domain is hardcoded. After a real domain is purchased, add it from the Pages 
 
 ## Edit products and categories
 
-All sample inventory, categories, prices, image paths, and the contact email are centralized in [`data/site.ts`](data/site.ts).
+All inventory examples, categories, image paths, and the contact email are centralized in [`data/site.ts`](data/site.ts).
 
 - Update a product by editing its object in `products`.
 - Add a product by copying an existing object and giving it a unique URL-safe `slug`.
-- Keep `sample: true` until the listing represents real approved inventory.
+- Keep `sample: true` while availability is confirmed by email rather than through online checkout.
 - Remove `price` when pricing is not ready.
 - Category values must match one of the slugs in `categories`.
-- Replace `hello@example.com` in `contactEmail` before launch.
 
 Product detail routes are generated at build time from this file. Run `npm run build` after changes.
 
 ## Replace photos
 
-Optimized, web-ready placeholders live in `public/images/`:
+Original uploaded photography lives locally in the git-ignored `public/real_images/` and `public/branding_images/` folders. The web-ready versions used by the site live in the versioned `public/product-images/` folder.
 
-- `workshop-hero.webp`
-- `botanical-wreath.webp`
-- `ceramic-treasures.webp`
-- `makers-hands.webp`
+- Run `node scripts/optimize-real-images.mjs` after replacing or adding source photos.
+- Keep the descriptive filenames in `public/product-images/` aligned with the paths in `data/site.ts`.
+- Product photos are stored as optimized WebP files for faster page loads.
+- The production build automatically removes the source-resolution folders from `out/`, so only optimized derivatives are deployed.
 
-The high-resolution generated PNG sources are kept in `assets/source-images/` and are not included in the deployed site. You can overwrite a public WebP with an optimized replacement of the same name, or add a new file and update the `images` map in [`data/site.ts`](data/site.ts). Keep filenames lowercase and web-friendly. Use descriptive alt text in the component if the subject changes. For best performance, use WebP or optimized JPEG/PNG files sized close to their displayed dimensions.
+The original generated placeholders remain in `assets/source-images/` and `public/images/` for reference, but the visible site now uses the real product photography. Keep filenames lowercase and web-friendly, and update descriptive alt text if a photo’s subject changes.
 
 ## Forms
 
-The Contact and Custom Orders forms validate in the browser, then open a prefilled draft in the visitor's email app. Nothing is submitted automatically and there is no hidden backend. Replace the placeholder email before launch and test the handoff on a phone and desktop computer with a configured mail app.
+The Contact and Custom Orders forms validate in the browser, then open a prefilled draft addressed to `generationalgemsin@gmail.com` in the visitor's email app. Nothing is submitted automatically and there is no hidden backend.
 
 ## Information needed before launch
 
 - Owners' names and approved mother-daughter story
-- Real contact email and preferred response-time wording
-- Current product names, descriptions, prices, and availability
-- Final product and lifestyle photography
+- Current prices and availability
+- Additional lifestyle photography, if desired
 - Confirmed custom-order policies and typical lead times
 - Social profile links, if any
 - Shipping/pickup area and any business policies that should be shown

@@ -27,6 +27,6 @@ export function InquiryForm({ kind = "general" }: { kind?: "general" | "custom" 
     {kind === "custom" && <label>What are you imagining?<select name="interest" defaultValue=""><option value="" disabled>Choose an inspiration</option><option>Home decor</option><option>Gift or keepsake</option><option>Seasonal piece</option><option>Something else</option></select></label>}
     <label>Your note<textarea name="message" rows={6} required {...field("message")} placeholder={kind === "custom" ? "Tell us about the occasion, colors, timing, and anything meaningful you would love to include…" : "How can we help?"}/>{errors.message && <span id="message-error" className="error" role="alert">{errors.message}</span>}</label>
     <button className="button button-primary" type="submit">Continue in email <ArrowUpRight aria-hidden="true"/></button>
-    <p className="form-note">This opens your email app with a draft. Nothing is sent automatically. Replace the placeholder email address before launch.</p>
+    <p className="form-note">This opens your email app with a draft. Nothing is sent automatically.</p>
   </form>;
 }
